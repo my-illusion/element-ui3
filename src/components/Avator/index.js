@@ -4,4 +4,4 @@ Avator.install = function(app) {
     app.component(Avator.name, Avator)
 }
 
-export { Avator }
+export default Avator
