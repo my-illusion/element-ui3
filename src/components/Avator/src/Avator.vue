@@ -1,11 +1,11 @@
 <template>
-  <span :style="style" :class="classes">
+  <span :style="style">
     222
   </span>
 </template>
 
 <script>
-import { computed, onBeforeMount, toRefs } from 'vue'
+import { computed, toRefs } from 'vue'
 
 import { isNumber } from '../../../utils/types'
 
@@ -15,10 +15,6 @@ export default {
     name: 'Avator',
     props,
     setup(props) {
-      onBeforeMount(() => {
-        console.log(222)
-      })
-
       const { size } = toRefs(props)
 
       const style = useStyle(size)
