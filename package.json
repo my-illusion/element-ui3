@@ -2,7 +2,8 @@
   "name": "element-ui3",
   "version": "0.0.0",
   "description": "a UI library base vue3",
-  "main": "index.js",
+  "main": "dist/element-ui3.cjs.js",
+  "module": "dist/element-ui3.esm-bundler.js",
   "scripts": {
     "build:lib": "node ./node_modules/rollup/dist/bin/rollup -c",
     "build:theme": "node scripts/genCssFile.js && gulp build --gulpfile ./gulpfile.js",
@@ -46,6 +47,7 @@
     "vue": "^3.0.7"
   },
   "dependencies": {
-    "eslint-plugin-vue": "^7.8.0"
+    "eslint-plugin-vue": "^7.8.0",
+    "throttle-debounce": "^3.0.1"
   }
 }

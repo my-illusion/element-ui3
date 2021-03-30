@@ -59,7 +59,7 @@ function mergeConfig(baseConfig, configB) {
 }
 
 function createFileName(formatName) {
-    return `dist/element-ui3.${formatName}.js`
+    return `example/dist/element-ui3.${formatName}.js`
 }
 
 // es-bundle
@@ -166,13 +166,13 @@ const esBundleConfig = {
   }
   
   const prodFormatConfigs = [
-    esBundleConfig,
-    esBrowserProdConfig,
-    esBrowserConfig,
-    cjsConfig,
-    cjsProdConfig,
+    // esBundleConfig,
+    // esBrowserProdConfig,
+    // esBrowserConfig,
+    // cjsConfig,
+    // cjsProdConfig,
     globalConfig,
-    globalProdConfig
+    // globalProdConfig
   ]
   const devFormatConfigs = [esBundleConfig]
   

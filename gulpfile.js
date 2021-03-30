@@ -15,11 +15,13 @@ function compile() {
         })
       )
       .pipe(cssmin())
+      .pipe(dest('./example/css'))
     //   .pipe(rename(function(path) {
     //       console.log(path)
     //       path.dirname = './lib'
     //   }))
-      .pipe(dest('./lib'))
+    //   .pipe(dest('./lib'))
+
 }
 
 exports.build = series(compile)
