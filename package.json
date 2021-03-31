@@ -7,6 +7,7 @@
   "scripts": {
     "build:lib": "node ./node_modules/rollup/dist/bin/rollup -c",
     "build:theme": "node scripts/genCssFile.js && gulp build --gulpfile ./gulpfile.js",
+    "build": "yarn build:lib && yarn build:theme",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "typings": "types/index.d.ts",
