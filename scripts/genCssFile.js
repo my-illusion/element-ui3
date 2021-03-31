@@ -31,7 +31,7 @@ function getComponentNameList(componentPath) {
 }
 
 function genCssCode(componentNameList) {
-    const indexContent = ""
+    const indexContent = "@import './base.scss';\n"
     return componentNameList.reduce((context, filePath) => {
         return (context += '@import "../components/' + filePath + '";\n')
     }, indexContent)

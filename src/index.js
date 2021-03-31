@@ -1,4 +1,4 @@
-import BackTop from './components/BackTop'
+import BackTop from './components/Backtop'
 
 const components = [
     BackTop

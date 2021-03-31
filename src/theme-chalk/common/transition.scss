@@ -1,0 +1,8 @@
+.el-fade-in-enter-active,
+.el-fade-in-leave-active {
+  transition: all 0.3s cubic-bezier(0.55, 0, 0.1, 1);
+}
+.el-fade-in-enter-from,
+.el-fade-in-leave-active {
+  opacity: 0;
+}
