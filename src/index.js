@@ -1,7 +1,11 @@
 import BackTop from './components/Backtop'
+import Row from './components/Row'
+import Col from './components/Col'
 
 const components = [
-    BackTop
+    BackTop,
+    Row,
+    Col
 ];
 
 function install(app) {
@@ -16,7 +20,9 @@ const element3 = {
 };
 
 export {
-    BackTop
+    BackTop,
+    Row,
+    Col
 };
 
 export default element3;

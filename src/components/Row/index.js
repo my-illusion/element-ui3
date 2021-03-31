@@ -1,7 +1,7 @@
 import Row from './src/Row.js'
 
-Row.install = function(app) {
-    app.use(Row.name, Row)
+Row.install = function (app) {
+    app.component(Row.name, Row)
 }
 
 export default Row

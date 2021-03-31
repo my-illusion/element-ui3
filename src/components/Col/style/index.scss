@@ -1,0 +1,32 @@
+@import "../../../theme-chalk/mixins/mixins.scss";
+@import "../../../theme-chalk/mixins/utils.scss";
+@import "../../../theme-chalk/common//var.scss";
+
+[class*='el-col-'] {
+    float: left;
+    box-sizing: border-box;
+}
+
+.el-col-0 {
+    display: none;
+}
+
+@for $i from 0 through 24 {
+    $width: (1 / 24 * $i * 100) * 1%;
+    .el-col-#{$i} {
+        width: $width;
+    }
+    .el-col-offset-#{$i} {
+        margin-left: $width;
+    }
+    
+    .el-col-pull-#{$i} {
+        position: relative;
+        right: $width;
+    }
+
+    .el-col-push-#{$i} {
+        position: relative;
+        left: $width;
+    }
+}

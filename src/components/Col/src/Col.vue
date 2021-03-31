@@ -1,5 +1,5 @@
 <script>
-import { computed, getCurrentInstance, toRefs, unref } from 'vue'
+import { computed, getCurrentInstance, toRefs, unref, h } from 'vue'
 const propsList = ['span', 'offset', 'pull', 'push']
 export default {
     name: 'Col',
@@ -45,14 +45,33 @@ export default {
             propsList.forEach(prop => {
                 const propValue = unref(toRefs(props)[prop])
                 if(propValue || propValue === 0) {
-                    classList.push()
+                    classList.push(
+                        prop !== 'span'
+                        ? `el-col-${prop}-${unref(toRefs(props)[prop])}`
+                        : `el-col-${unref(toRefs(props)[prop])}`
+                    )
+                }
+            })
+
+            ;['xs', 'sm', 'md', 'lg', 'xl'].forEach((size) => {
+                if (typeof unref(toRefs(props)[size]) === 'number') {
+                    classList.push(`el-col-${size}-${unref(toRefs(props)[size])}`)
+                } else if (typeof unref(toRefs(props)[size]) === 'object') {
+                    const propsData = unref(toRefs(props)[size])
+                    Object.keys(propsData).forEach((prop) => {
+                        classList.push(
+                        prop !== 'span'
+                            ? `el-col-${size}-${prop}-${propsData[prop]}`
+                            : `el-col-${size}-${propsData[prop]}`
+                        )
+                    })
                 }
             })
 
             return h(
                 unref(tag),
                 {
-                    class: [],
+                    class: ['el-col', classList],
                     style
                 },
                 slots.default ? slots.default() : ''

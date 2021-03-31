@@ -1,6 +1,4 @@
-import { computed, render } from "vue"
-
-import { computed, provide, getCurrentInstance } from 'vue'
+import { computed, provide, getCurrentInstance, h } from 'vue'
 
 export default {
     name: 'Row',
@@ -40,8 +38,8 @@ export default {
             style
         }
     },
-    render(h){
-        return (
+    render(){
+        return h(
             this.tag,
             {
                 class: [
